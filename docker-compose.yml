@@ -1,0 +1,62 @@
+ # Use postgres/example user/password credentials
+  version: '3.1'
+
+  services:
+    
+    db:
+      image:  postgres
+      restart: always
+      ports:
+        - "5432:5432"
+      env_file: .env 
+
+      volumes:
+        - ./database:/var/lib/postgresql/data
+        
+    web:
+      container_name: videoauditextext
+      build: .
+      command:  gunicorn --bind 0.0.0.0:8000 videoauditextext.wsgi 
+      volumes:
+        - ./media:/code/media
+        - ./static:/code/static
+      ports:
+        - 8000:8000
+      depends_on:
+        - 'db'
+        - 'redis'
+      env_file: .env 
+
+    nginx:
+      build: ./nginx
+      restart: always
+      ports:
+        - 80:80
+      volumes:
+        - ./static/:/code/static/
+        - ./media/:/code/media/
+      depends_on:
+        - web
+
+    celery:
+      container_name: celery
+      command: celery -A videoauditextext worker --beat --scheduler django --loglevel=info  
+      build: 
+        context: .
+        dockerfile: CeleryDockerfile
+      depends_on: 
+        - "db"
+        - "redis"
+      env_file: .env
+
+    redis:
+      image: redis
+      restart: always
+      ports:
+        - "6379:6379"
+      
+    adminer:
+      image: adminer
+      restart: always
+      ports:
+        - 8080:8080

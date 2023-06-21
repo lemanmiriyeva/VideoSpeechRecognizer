@@ -1,0 +1,220 @@
+#loading {
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url("https://media0.giphy.com/media/fxk77fLi2ZPQU6kHKx/giphy.gif?cid=ecf05e47sul6e3wy320f1snfbgyvbefznv59o9c598knjxvq&ep=v1_stickers_search&rid=giphy.gif&ct=s"); 
+    background-repeat: no-repeat;
+    background-position: center;
+  
+  
+  }
+body{
+    background-image: url('https://webgradients.com/public/webgradients_png/069%20Purple%20Division.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background: #24C6DC; 
+    background: -webkit-linear-gradient(to bottom, #514A9D, #24C6DC);  
+    background: linear-gradient(to bottom, #514A9D, #24C6DC); 
+  }
+  
+  .box div {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 6px solid rgba(255,255,255,0.8);
+  }
+  
+  .box div:nth-child(1) {
+    top: 12%;
+    left: 42%;
+    animation: animate 10s linear infinite;
+  }
+  
+  .box div:nth-child(2) {
+    top: 70%;
+    left: 50%;
+    animation: animate 7s linear infinite;
+  }
+  .box div:nth-child(3) {
+    top: 17%;
+    left: 6%;
+    animation: animate 9s linear infinite;
+  }
+  
+  .box div:nth-child(4) {
+    top: 20%;
+    left: 60%;
+    animation: animate 10s linear infinite;
+  }
+  
+  .box div:nth-child(5) {
+    top: 67%;
+    left: 10%;
+    animation: animate 6s linear infinite;
+  }
+  
+  .box div:nth-child(6) {
+    top: 80%;
+    left: 70%;
+    animation: animate 12s linear infinite;
+  }
+  
+  .box div:nth-child(7) {
+    top: 60%;
+    left: 80%;
+    animation: animate 15s linear infinite;
+  }
+  
+  .box div:nth-child(8) {
+    top: 32%;
+    left: 25%;
+    animation: animate 16s linear infinite;
+  }
+  
+  .box div:nth-child(9) {
+    top: 90%;
+    left: 25%;
+    animation: animate 9s linear infinite;
+  }
+  
+  .box div:nth-child(10) {
+    top: 20%;
+    left: 80%;
+    animation: animate 5s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: scale(0) translateY(-90px) rotate(360deg);
+      opacity: 1;
+    }
+    
+    100% {
+      transform: scale(1.3) translateY(-90px) rotate(-180deg);
+      border-radius: 50%;
+      opacity: 0;
+    }
+  }
+  .form-convert .card{
+    background: transparent !important;
+  }
+  .form-control,.form-select{
+   color: #fff !important;
+  }
+  .form-select option{
+   color: #000 !important;
+  }
+  h1{
+    font-family: 'Bruno Ace SC', cursive;
+    color: #fff;
+  }
+  h5{
+    font-family: 'Prompt', sans-serif;
+    color: #fff;
+  }
+  .form-control::placeholder{
+    color: #fff !important;
+  }
+  .form-control:focus,.form-select:focus{
+    box-shadow: none !important;
+  }
+  .btn-convert{
+    background: #5dbea3;
+    transition: all .4s ease-in-out;
+    color: #000;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    border: none;
+  }
+  .btn-convert:hover{
+    background: #33b249;
+
+  }
+  input[type=file]::file-selector-button {
+    border: 2px solid #5dbea3;
+    border-radius: .2em;
+    background-color: #5dbea3;
+    transition: 1s;
+    font-size: 13px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background-color: #33b249;
+    border: 2px solid #33b249;
+  }
+  .file-name{
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 10px;
+    font-family: 'Prompt', sans-serif;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+
+  
+.file-drop-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  width: 450px;
+  max-width: 100%;
+  padding: 25px;
+  border: 1px dashed rgba(255, 255, 255, .6);
+  border-radius: 3px;
+  transition: 0.2s;
+}
+.file-drop-area.is-active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.fake-btn {
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  padding: 8px 15px;
+  margin-right: 10px;
+  font-weight: 500;
+  color: #000;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.file-msg {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+.file-input:focus {
+  outline: none;
+}
